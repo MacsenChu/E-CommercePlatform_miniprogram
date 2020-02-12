@@ -1,6 +1,6 @@
 // 0 引入用来发送请求的方法 一定要把路径补全
 import { request } from "../../request/index.js";
-import regeneratorRuntime from '../../lib/regenerator-runtime/runtime';
+
 Page({
   data: {
     // 轮播图数组
@@ -29,7 +29,7 @@ Page({
     //     })
     //   }
     // });
-    let { data: res } =  await request({url: 'https://api.zbztb.cn/api/public/v1/home/swiperdata'});
+    const { data: res } =  await request({url: '/home/swiperdata'});
     this.setData({
       swiperList: res.message
     });
@@ -37,7 +37,7 @@ Page({
 
   // 获取导航数据
   async getCateList() {
-    let { data: res } = await request({url: 'https://api.zbztb.cn/api/public/v1/home/catitems'});
+    const { data: res } = await request({url: '/home/catitems'});
     this.setData({
       catesList: res.message
     });
@@ -45,7 +45,7 @@ Page({
 
   // 获取导航数据
   async getFloorList() {
-    let { data: res } = await request({url: 'https://api.zbztb.cn/api/public/v1/home/floordata'});
+    const { data: res } = await request({url: '/home/floordata'});
     this.setData({
       floorList: res.message
     });
