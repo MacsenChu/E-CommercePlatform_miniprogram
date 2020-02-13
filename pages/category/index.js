@@ -1,5 +1,6 @@
 import { request } from "../../request/index.js";
 
+
 Page({
   data: {
     // 左侧菜单数据
@@ -34,8 +35,8 @@ Page({
       // 不存在 发送请求获取数据
       this.getCates();
     } else {
-      // 有旧的数据 定义过期时间 5s
-      if ( Date.now() - Cates.time > 1000 * 5 ) {
+      // 有旧的数据 定义过期时间
+      if ( Date.now() - Cates.time > 1000 * 3600 * 24 ) {
         // 重新发送请求
         this.getCates();
       } else {
@@ -81,6 +82,5 @@ Page({
     // 重新设置右侧内容的scroll-view标签的距离顶部的距离
     scrollTop: 0
    });
-   
   }
 })
