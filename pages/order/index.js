@@ -79,5 +79,5 @@ Page({
     this.changeTitleByIndex(index);
     // 2 重新发送请求 type = 1, index = 0
     this.getOrders(index + 1);
-  },
+  }
 })
